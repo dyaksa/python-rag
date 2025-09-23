@@ -1,3 +1,8 @@
-from pkg.db import connect_to_db
+from app.bootstrap.app_bootstrap import create_app
+from app.core.config import settings
 
-connection = connect_to_db()
+app = create_app()
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=settings.APP_PORT, debug=settings.DEBUG)
