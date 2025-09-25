@@ -27,6 +27,11 @@ class Settings(BaseSettings):
     GOOGLE_LLM_MODEL: str
     GOOGLE_EMBEDDING_MODEL: str
 
+
+    REDIS_HOST: str = "localhost"
+    REDIS_PORT: int = 6379
+    REDIS_PASSWORD: str = ""
+
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
